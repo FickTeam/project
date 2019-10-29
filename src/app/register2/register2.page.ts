@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';    
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { NavController, AlertController } from '@ionic/angular';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '../core/services/auth.service';
 
 @Component({
   selector: 'app-register2',

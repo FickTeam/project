@@ -23,7 +23,7 @@ export class AuthenticationService {
         this.user$ = this.afAuth.authState.pipe(
             switchMap(user => {
                 if (user) {
-                    return this.afs.doc<UserInterface>(${ FireStoreDoc.USER_PROFILE } / ${ user.uid }).valueChanges();
+                    return this.afs.doc<UserInterface>(`${ FireStoreDoc.USER_PROFILE } / ${ user.uid }`).valueChanges();
                 } else {
                     return of(null);
                 }

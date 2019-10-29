@@ -27,7 +27,7 @@
     </ion-item>
 
   test
-    <ion-button><p text-right>Forgot Password? (click)="reset-password()"</p></ion-button>
+    <ion-button (click)="resetPassword()"><p text-right>Forgot Password?</p></ion-button>
 
     <div class="validation-errors">
       <ng-container *ngFor="let validation of validationMessages.password">

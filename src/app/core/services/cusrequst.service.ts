@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase/app'
-import { RegisterInterface } from '../_models/register.interface';
-import { AuthInterface } from '../_models/auth.interface';
+import { RegisterInterface } from '../models/register.interface';
+import { AuthInterface } from '../models/auth.interface';
 import { AngularFirestore, DocumentReference, AngularFirestoreCollection } from '@angular/fire/firestore';
 
 @Injectable({

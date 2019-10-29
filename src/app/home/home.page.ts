@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { AuthInterface } from '../_models/auth.interface';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { NavController } from '@ionic/angular';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '../core/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -46,7 +46,7 @@ export class HomePage {
     this.authService.loginUser(value)
     .then(res => {
       this.errorMessage = '';
-      this.navCtrl.navigateForward('/dashboard');
+      this.navCtrl.navigateForward('/cusrequst');
     }, err => {
       this.errorMessage = err.message;
     });
@@ -60,5 +60,10 @@ export class HomePage {
   }
 
   registerModal(){}
+
+  resetPassword(){
+    console.log("test");
+    
+  }
 
 }
