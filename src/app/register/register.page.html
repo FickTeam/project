@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button color="light" (click)="dismissRegister()">กลับ</ion-button>
+    <ion-title>สมัครสมาชิกลูกค้า</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <!-- <form #form="ngForm" (ngSubmit)="register(form)" method="post"> -->
+      <ion-item>
+        <img src="https://scontent.fbkk11-1.fna.fbcdn.net/v/t1.15752-9/69805046_2743438665690783_854852719884632064_n.png?_nc_cat=105&_nc_eui2=AeEZoexHBXvUMfN9uv2LIX4nq7qAGrXU4IC5G7dq6Vcg7PYEPQVz8fPCaiOx00DB_zcam5eEHwWYmCMTGT8e2GN0fjzy8bJmjADyYbq2tplJIA&_nc_oc=AQl1DYKxzfE0NFEY8Yt8Pt3-6M2x1AzYW2hh3Rj419s_Q9Us95ayvJy9c0QgzOFaXrE&_nc_ht=scontent.fbkk11-1.fna&oh=abac7097091fc14049f1ce2e3ad33185&oe=5DD0AD7A">
+      </ion-item>
+    
+  <form class="form" [formGroup]="form"  (ngSubmit)="tryRegister(form.value)">
+    <ion-item>
+        <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" formControlName="email"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="floating">ชื่อ - สกุล</ion-label>
+      <ion-input type="text" formControlName="fName"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="floating">เลขบัตรประชาชน</ion-label>
+      <ion-input type="text" formControlName="idCard"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">วัน/เดือน/ปีเกิด</ion-label>
+      <ion-input type="text" formControlName="birthDay"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">เบอร์โทรศัพท์</ion-label>
+      <ion-input type="text" formControlName="tel"></ion-input>
+    </ion-item>
+    
+  
+    <ion-button  class="submit-btn" type="submit"  [disabled]="!form.valid">สมัครสมาชิก</ion-button>
+    <!-- <ion-button type="submit" expand="full" color="warning">Register</ion-button> -->
+  </form>
+    <!-- <ion-button expand="full" color="primary" (click)="loginModal()">Login</ion-button> -->
+</ion-content> 

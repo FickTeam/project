@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button color="light" (click)="dismissRegister()">กลับ</ion-button>
+    <ion-title style="text-align: center">แจ้งอาการ</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+        <ion-item>
+         <ion-input name="name" type="text" placeholder="ทะเบียนรถ" ngModel required [(ngModel)]="idCar" ></ion-input>
+       </ion-item>
+       <ion-item>
+         <ion-input name="name1" type="text" placeholder="อาการเสีย" ngModel required [(ngModel)]="breakDown"></ion-input>
+       </ion-item>
+       <ion-item>
+         <ion-input name="name2" type="text" placeholder="เติมน้ำมัน" ngModel required [(ngModel)]="refuel"></ion-input>
+       </ion-item>
+       <ion-list>
+          <ion-radio-group [(ngModel)]="ansRadio">
+              <ion-row>
+                  <ion-col>
+                    <ion-item>
+                    <img class="ee" src="https://scontent.fbkk2-6.fna.fbcdn.net/v/t1.15752-9/74692498_528915174628722_7801402248839299072_n.png?_nc_cat=111&_nc_eui2=AeFAJvkIdIgZCNK0dmLNkJXw7IXTAgxlV93jcdTbGLZZuKTw-eW-SNn2Vgef2kqgTlg8kNT40FJbttulW1p1MZRSUciNGldxcnAWDknBAgCH1Q&_nc_oc=AQn50zUjgTRd_76V49VEB_69C3CDlWV-mdPaguABrZLVCQPnLJDQNKRzpeYRWKQIArw&_nc_ht=scontent.fbkk2-6.fna&oh=210324d63a2243316ae3a503cec465c2&oe=5E1EDDC6" />
+              <label class="dd">แก๊สโซฮอล91</label>
+              <ion-radio value="91"></ion-radio>
+                    </ion-item>
+            </ion-col>
+            <ion-col>
+              <ion-item>
+              <img class="ee" src="https://scontent.fbkk2-8.fna.fbcdn.net/v/t1.15752-9/73108064_2335582016550768_1619459432326889472_n.png?_nc_cat=103&_nc_eui2=AeEFxwXOURZ8SnlxaqGgLJl6zFFdUQ7heKVCPqvzLvNBoifgim_kMjZnTJRMQ1mtdf669rGeNfAwtVrrvyZmz_47hnHHFXF7QxhaO08S17VmEg&_nc_oc=AQnNs4CHHWBE01oDpV6itwzkiS6Kli5tSdLtkFVLxiU57dimcRgoQWn2gNnIgqg-XZI&_nc_ht=scontent.fbkk2-8.fna&oh=afa3095488cb2a553e03c3efd903b3c5&oe=5E528829" />
+              <label class="dd">แก๊สโซฮอล95</label>
+              <ion-radio value="95"></ion-radio>
+            </ion-item>
+          </ion-col>
+           
+            <ion-col>
+              <ion-item>
+                 <img class="ee" src="https://scontent.fbkk2-8.fna.fbcdn.net/v/t1.15752-9/74230413_658726644657615_1916064213021753344_n.png?_nc_cat=102&_nc_eui2=AeEca4Bs1ev7qW87OVig_EvGOQTx8duudG3WTMpaSCEJduuoA4NmJmL3AwvZGmrVri4OuHPkpJwWTQItfWBbIIH_ZNxUtoEiYiHJYxVeAqKR7w&_nc_oc=AQlDuOqBAucsboRNHW9BivDiQji4uH1S6bBrPJiEV2YXiRlFev2BH1qTwy0jaNzj9Tk&_nc_ht=scontent.fbkk2-8.fna&oh=f8edd47df992edecf6e464111d642422&oe=5E568529" />
+              <label class="dd">ดีเซล</label>
+              <ion-radio value="disel"></ion-radio>
+              </ion-item>
+            </ion-col>
+           </ion-row>
+          </ion-radio-group>
+        </ion-list>
+       <ion-item>
+         <ion-input name="name4" type="text" placeholder="ปะยาง/เปลี่ยนยาง" ngModel required [(ngModel)]="tireChange"></ion-input>
+       </ion-item>
+     <div text-center>
+       <ion-button text="center" type="submit" color="warning" (click)="buttonFix()">แจ้งเสีย</ion-button>
+     </div>
+</ion-content>
+
+

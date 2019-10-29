@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+        <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <ion-item>
+   <img src="https://scontent.fbkk11-1.fna.fbcdn.net/v/t1.15752-9/69805046_2743438665690783_854852719884632064_n.png?_nc_cat=105&_nc_eui2=AeEZoexHBXvUMfN9uv2LIX4nq7qAGrXU4IC5G7dq6Vcg7PYEPQVz8fPCaiOx00DB_zcam5eEHwWYmCMTGT8e2GN0fjzy8bJmjADyYbq2tplJIA&_nc_oc=AQl1DYKxzfE0NFEY8Yt8Pt3-6M2x1AzYW2hh3Rj419s_Q9Us95ayvJy9c0QgzOFaXrE&_nc_ht=scontent.fbkk11-1.fna&oh=abac7097091fc14049f1ce2e3ad33185&oe=5DD0AD7A">
+  </ion-item>
+  <!-- class="form" [formGroup]="form"  (ngSubmit)="loginUser(form.value)" -->
+  <form  [formGroup]="form"  (ngSubmit)="loginUser(form.value)">
+    <ion-item>
+      <ion-label position="floating" >Email</ion-label>
+      <ion-input type="text" formControlName="email"></ion-input>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validationMessages.email">
+        <div class="error-message" *ngIf="form.get('email').hasError(validation.type) && (form.get('email').dirty || form.get('email').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+      
+    <ion-item>
+      <ion-label position="floating" >Password</ion-label>
+      <ion-input type="password" formControlName="password" class="form-controll" required></ion-input>
+    </ion-item>
+
+  test
+    <ion-button><p text-right>Forgot Password? (click)="reset-password()"</p></ion-button>
+
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validationMessages.password">
+        <div class="error-message" *ngIf="form.get('password').hasError(validation.type) && (form.get('password').dirty || form.get('password').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+    <ion-button type="submit" expand="full" color="warning" [disabled]="!form.valid">เข้าระบบ</ion-button>
+
+  </form>
+  
+    <label class="error-message">{{errorMessage}}</label>
+    <ion-button expand="full" color="danger" (click)="goToRegisterPage()">สมัครสมาชิก</ion-button>
+    <ion-button type="submit" expand="full" (click)="goToRegister2Page()">สมัครสมาชิก2</ion-button>
+</ion-content>

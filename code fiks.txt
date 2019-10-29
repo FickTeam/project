@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+        <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <ion-item>
+   <img src="https://scontent.fbkk5-6.fna.fbcdn.net/v/t1.15752-9/61228577_726158337800318_8475291997790273536_n.png?_nc_cat=101&_nc_eui2=AeGSJybijbRk0jxOF2I8jCIJtlyRlvL7QyJzbZoCoy_4FVCrmUkVW2Y8CeORBwdwFKXZD0P-FygS_mYG-Fv5GAIblJ8SA88mMtMgwKxyAAVSow&_nc_oc=AQlKzCNX6pkAc81L5acurcWJr26PSfdaZ0WUvlpE-nh7laH2JpVPhnJFYRNN-h9Nc-w&_nc_ht=scontent.fbkk5-6.fna&oh=1330c3018bf3cfcfa7cc739263a01fd9&oe=5DC89B12">
+  </ion-item>
+
+  <form #form="ngForm" (ngSubmit)="login(form)" method="post">
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input ngModel type="email" name="email"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input ngModel type="password" name="password"></ion-input>
+    </ion-item>
+  
+    <p text-right>Forgot Password?</p>
+  
+    <ion-button type="submit" expand="full" color="warning">Login</ion-button>
+  </form>
+   <ion-button expand="full" color="danger" (click)="registerModal()">Register</ion-button>
+</ion-content>
+
+
+-----------------------------------------------------------------------login------------------------------------------------------------------------------------------------------
+
+https://scontent.fbkk5-6.fna.fbcdn.net/v/t1.15752-9/61228577_726158337800318_8475291997790273536_n.png?_nc_cat=101&_nc_eui2=AeGSJybijbRk0jxOF2I8jCIJtlyRlvL7QyJzbZoCoy_4FVCrmUkVW2Y8CeORBwdwFKXZD0P-FygS_mYG-Fv5GAIblJ8SA88mMtMgwKxyAAVSow&_nc_oc=AQlKzCNX6pkAc81L5acurcWJr26PSfdaZ0WUvlpE-nh7laH2JpVPhnJFYRNN-h9Nc-w&_nc_ht=scontent.fbkk5-6.fna&oh=1330c3018bf3cfcfa7cc739263a01fd9&oe=5DC89B12
