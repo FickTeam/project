@@ -59,7 +59,9 @@ export class HomePage {
     this.navCtrl.navigateForward('/register2');
   }
 
-  registerModal(){}
+  registerModal(){
+    
+  }
 
   resetPassword(){
     console.log("test");

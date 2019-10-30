@@ -12,6 +12,10 @@ const routes: Routes = [
   { path: 'register2', loadChildren: './register2/register2.module#Register2PageModule' },
   { path: 'googlemap', loadChildren: './googlemap/googlemap.module#GooglemapPageModule' },
   { path: 'googlemapforshop', loadChildren: './googlemapforshop/googlemapforshop.module#GooglemapforshopPageModule' },
+  { path: 'profilecustomer', loadChildren: './profilecustomer/profilecustomer.module#ProfilecustomerPageModule' },
+  { path: 'profilerepairman', loadChildren: './profilerepairman/profilerepairman.module#ProfilerepairmanPageModule' },
+  { path: 'order', loadChildren: './order/order.module#OrderPageModule' },
+  { path: 'device', loadChildren: './device/device.module#DevicePageModule' },
 ];
 
 @NgModule({
