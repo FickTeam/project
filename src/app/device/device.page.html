@@ -2,18 +2,20 @@
     <ion-toolbar>
         <ion-button color="light" (click)="dismissRegister()">กลับ</ion-button>
         <ion-title>ประเมิน</ion-title>
-       
         <ion-buttons slot="end">
             <ion-button color="dark" (click)="openSignup()">
               <ion-icon slot="icon-only" slot="end" name="person"></ion-icon>
             </ion-button>
           </ion-buttons>
+       
   
     </ion-toolbar>
 </ion-header>
 
-<ion-content>
-    <ion-list>
+<ion-item>
+    <img src="https://cdn2.iconfinder.com/data/icons/flat-ui-free/200/clipboard.png">
+   </ion-item>
+
     <ion-item>
         <ion-input name="name" type="text" placeholder="ทะเบียนรถ" ngModel required [(ngModel)]="idCar" ></ion-input>
       </ion-item>
@@ -21,14 +23,15 @@
         <ion-input name="name1" type="text" placeholder="อาการเสีย" ngModel required [(ngModel)]="breakDown"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input name="name2" type="text" placeholder="เติมน้ำมัน" ngModel required [(ngModel)]="refuel"></ion-input>
+        <ion-input name="name2" type="text" placeholder="ราคาประเมิน" ngModel required [(ngModel)]="refuel"></ion-input>
       </ion-item>
 
-    </ion-list>
 
-    <ion-button class="ion-margin-top"color="warning" [disabled]="myForm.invalid" size="large" expand="full"
-    (click)="signup(myForm.value)">
-    ประเมิน
-  </ion-button>
+       <ion-button class="ion-margin-top"color="warning" [disabled]="myForm.invalid" size="large" expand="full"
+        (click)="signup(myForm.value)">
+        ประเมิน
+       </ion-button>
 
-</ion-content>
+  
+
+
