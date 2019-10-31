@@ -67,12 +67,12 @@ export class CusrequstPage implements OnInit {
       refuel: this.refuel,
       ansRadio: this.ansRadio,
       tireChange: this.tireChange,
-      latitude: this.museum.latitude,
-      longtitude : this.museum.longtitude
+      // latitude: this.museum.latitude,
+      // longtitude : this.museum.longtitude
     }
 
-    this.cusrequstsService.updateCusrequsts(this.data)
-    this.navCtrl.navigateForward(`/repairman/${this.idCar}/${this.breakDown}/${this.refuel}/${this.ansRadio}/${this.tireChange}`)
+    // this.cusrequstsService.updateCusrequsts(this.data)
+    this.navCtrl.navigateForward(`/badcondition/${this.idCar}/${this.breakDown}/${this.refuel}/${this.ansRadio}/${this.tireChange}`)
   }
 
   dismissRegister(){

@@ -16,7 +16,7 @@ map:any
   ngOnInit() {
 
     //ใส่ latitude กับ longtitude --------->( latitude , longtitude )
-    const latLng = new google.maps.LatLng(28.6117993, 77.2194934);  
+    const latLng = new google.maps.LatLng(14.0015492,100.7170243);  
     const mapOptions = {
       center: latLng,
       disableDefaultUI: true,

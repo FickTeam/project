@@ -30,8 +30,8 @@
       <ion-input type="password" formControlName="password" class="form-controll" required></ion-input>
     </ion-item>
 
-  
-    <ion-button (click)="resetPassword()"><p text-right>Forgot Password?</p></ion-button>
+    
+    <ion-button text="right" size="small" (click)="resetPassword()">Forgot Password?</ion-button>
 
     <div class="validation-errors">
       <ng-container *ngFor="let validation of validationMessages.password">
@@ -47,4 +47,6 @@
     <label class="error-message">{{errorMessage}}</label>
     <ion-button expand="full" color="danger" (click)="goToRegisterPage()">สมัครสมาชิก</ion-button>
     <ion-button type="submit" expand="full" (click)="goToRegister2Page()">สมัครสมาชิก2</ion-button>
+    
+    
 </ion-content>

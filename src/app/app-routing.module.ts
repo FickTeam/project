@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'profilerepairman', loadChildren: './profilerepairman/profilerepairman.module#ProfilerepairmanPageModule' },
   { path: 'order', loadChildren: './order/order.module#OrderPageModule' },
   { path: 'device', loadChildren: './device/device.module#DevicePageModule' },
-  { path: 'badcondition', loadChildren: './badcondition/badcondition.module#BadconditionPageModule' },
+  { path: 'badcondition/:data/:data1/:data2/:data3/:data4n', loadChildren: './badcondition/badcondition.module#BadconditionPageModule' },
 ];
 
 @NgModule({
