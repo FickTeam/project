@@ -13,20 +13,22 @@ declare var google
   styleUrls: ['cusrequst.page.scss'],
 })
 export class CusrequstPage implements OnInit {
+  @ViewChild('mapContainer',{static:true}) mapContainer: ElementRef;
+
   idCar: any
   breakDown: any
   refuel: any
   ansRadio: any
   tireChange: any
   data: any
+  map: any;
+  museum:any
   constructor(
     public navCtrl: NavController,
     private cusrequstsService: CusrequstsService,
     private geolocation: Geolocation ) {
  }
- @ViewChild('mapContainer',{static:true}) mapContainer: ElementRef;
-  map: any;
-  museum:any
+
 
   ngOnInit() {
     this.geolocation.getCurrentPosition().then((resp) => {
@@ -67,11 +69,10 @@ export class CusrequstPage implements OnInit {
       refuel: this.refuel,
       ansRadio: this.ansRadio,
       tireChange: this.tireChange,
-      // latitude: this.museum.latitude,
-      // longtitude : this.museum.longtitude
+      latitude: this.museum.latitude,
+      longtitude : this.museum.longitude
     }
-
-    // this.cusrequstsService.updateCusrequsts(this.data)
+    this.cusrequstsService.updateCusrequsts(this.data)
     this.navCtrl.navigateForward(`/badcondition/${this.idCar}/${this.breakDown}/${this.refuel}/${this.ansRadio}/${this.tireChange}`)
   }
 

@@ -1,4 +1,5 @@
 import { Component, OnInit ,ViewChild, ElementRef} from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 declare var google
 
@@ -10,13 +11,19 @@ declare var google
 export class GooglemapforshopPage implements OnInit {
   @ViewChild('mapContainer',{static:true}) mapContainer: ElementRef;
 
-  constructor() { }
+  constructor(public route:ActivatedRoute) { }
 map:any
-
+dataLatitude:any
+dataLongtitude:any
   ngOnInit() {
-
+   let dataUser =  this.route.snapshot.params.data
+   let dataParse = JSON.parse(dataUser)
+   console.log(dataParse.repairinvoiced.position._lat);
+   
+    
+    
     //ใส่ latitude กับ longtitude --------->( latitude , longtitude )
-    const latLng = new google.maps.LatLng(14.0015492,100.7170243);  
+    const latLng = new google.maps.LatLng(dataParse.repairinvoiced.position._lat,dataParse.repairinvoiced.position._long);  
     const mapOptions = {
       center: latLng,
       disableDefaultUI: true,

@@ -1,3 +1,5 @@
+
+  
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
@@ -19,6 +21,15 @@ import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/fi
 import { AngularFireModule } from '@angular/fire';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 
+var firebaseConfig: {
+  apiKey: "AIzaSyCk1aQs1xispsoqtMJ7ZZdOxkR7IwKKGjc",
+  authDomain: "fiks-3d7cf.firebaseapp.com",
+  databaseURL: "https://fiks-3d7cf.firebaseio.com",
+  projectId: "fiks-3d7cf",
+  storageBucket: "fiks-3d7cf.appspot.com",
+  messagingSenderId: "597930985217",
+  appId: "1:597930985217:web:95e972f7ecac0156"
+}
 
 
 @NgModule({
@@ -44,3 +55,4 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
   bootstrap: [AppComponent]
 })
 export class AppModule {}
+

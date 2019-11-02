@@ -17,5 +17,5 @@ export class CusrequstsService {
 
 updateCusrequsts(data: any):Promise<DocumentReference>{
   return this.userCusrequsts.add(data);
-}
+} 
 }

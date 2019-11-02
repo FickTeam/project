@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'repairman/:data/:data1/:data2/:data3/:data4', loadChildren: './repairman/repairman.module#RepairmanPageModule' },
   { path: 'register2', loadChildren: './register2/register2.module#Register2PageModule' },
   { path: 'googlemap', loadChildren: './googlemap/googlemap.module#GooglemapPageModule' },
-  { path: 'googlemapforshop', loadChildren: './googlemapforshop/googlemapforshop.module#GooglemapforshopPageModule' },
+  { path: 'googlemapforshop/:data', loadChildren: './googlemapforshop/googlemapforshop.module#GooglemapforshopPageModule' },
   { path: 'profilecustomer', loadChildren: './profilecustomer/profilecustomer.module#ProfilecustomerPageModule' },
   { path: 'profilerepairman', loadChildren: './profilerepairman/profilerepairman.module#ProfilerepairmanPageModule' },
   { path: 'order', loadChildren: './order/order.module#OrderPageModule' },
