@@ -1,6 +1,6 @@
 import { Component, OnInit ,ViewChild, ElementRef} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
+import { NavController } from '@ionic/angular';
 declare var google
 
 @Component({
@@ -11,7 +11,11 @@ declare var google
 export class GooglemapforshopPage implements OnInit {
   @ViewChild('mapContainer',{static:true}) mapContainer: ElementRef;
 
-  constructor(public route:ActivatedRoute) { }
+  constructor
+    (public route:ActivatedRoute, 
+     public navCtrl: NavController,) { 
+}
+
 map:any
 dataLatitude:any
 dataLongtitude:any
@@ -38,8 +42,13 @@ dataLongtitude:any
     });
   }
 
-  accessJOB(){
+   accessJOB(){
     //กดรับงาน
   }
+
+  dismissOrder(){
+    this.navCtrl.navigateBack("/order")
+
+ }
 
 }

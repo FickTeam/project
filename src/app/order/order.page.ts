@@ -4,6 +4,8 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { AngularFirestore, DocumentReference, AngularFirestoreCollection } from '@angular/fire/firestore';
 import * as firebase from 'firebase/app';
 import { Router } from "@angular/router";
+import { NavController } from '@ionic/angular';
+
 @Component({
   selector: 'app-order',
   templateUrl: './order.page.html',
@@ -14,7 +16,7 @@ export class OrderPage implements OnInit {
   dataUserSecret : any =[]
   img:any
   constructor(private listdataforshopService :ListdataforshopService, private afs: AngularFirestore,
-    public router: Router
+    public router: Router,public navCtrl: NavController
     ) { }
 
   ngOnInit() {
@@ -38,5 +40,9 @@ export class OrderPage implements OnInit {
     let dataUser = JSON.stringify(data)
   this.router.navigate(['googlemapforshop',dataUser])
   }
+
+  dismissHome(){
+    this.navCtrl.navigateBack("/home")
+ }
 
 }
