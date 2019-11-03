@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NavController } from '@ionic/angular';
+
 @Component({
   selector: 'app-badcondition',
   templateUrl: './badcondition.page.html',
@@ -29,4 +30,7 @@ export class BadconditionPage implements OnInit {
     this.navCtrl.navigateBack("/cusrequst")
   }
   
+  dismissProfilecustomer(){
+  this.navCtrl.navigateForward("/profilecustomer")
+  }
 }

@@ -43,12 +43,17 @@ dataLongtitude:any
   }
 
    accessJOB(){
-    //กดรับงาน
+    this.navCtrl.navigateForward("/device")
   }
 
   dismissOrder(){
     this.navCtrl.navigateBack("/order")
 
- }
+  }
+
+  dismissProfilerepairman(){
+  this.navCtrl.navigateForward("/profilerepairman")
+  }
+
 
 }

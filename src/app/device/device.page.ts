@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-device',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DevicePage implements OnInit {
 
-  constructor() { }
+  constructor(public navCtrl: NavController) { }
 
   ngOnInit() {
+  }
+  dismissProfilerepaiman(){
+    this.navCtrl.navigateForward("/profilerepairman")
+  }
+  dismissGoogleforshop(){
+    this.navCtrl.navigateBack("/googleforshop")
   }
 
 }

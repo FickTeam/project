@@ -79,5 +79,8 @@ export class CusrequstPage implements OnInit {
   dismissRegister(){
     this.navCtrl.navigateBack("/home")
   }
+  dismissProfilecustomer(){
+    this.navCtrl.navigateForward("/profilecustomer")
+  }
 }
 

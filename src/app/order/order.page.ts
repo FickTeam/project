@@ -43,6 +43,9 @@ export class OrderPage implements OnInit {
 
   dismissHome(){
     this.navCtrl.navigateBack("/home")
- }
+  }
+  dismissProfilerepaiman(){
+    this.navCtrl.navigateForward("/profilerepairman")
+  }
 
 }
