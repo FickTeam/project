@@ -36,6 +36,7 @@ export class RegisterPage implements OnInit {
       idCard: new FormControl(''),
       birthDay: new FormControl(''),
       tel: new FormControl(''),
+      type: new FormControl('y'),
       email: new FormControl('', Validators.compose([
         Validators.required,
         Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
@@ -56,12 +57,13 @@ export class RegisterPage implements OnInit {
   }
 
   tryRegister(value) {
-    console.log(value)
+    console.log(typeof(value))
     this.authService.register(value)
      .then(res => {
        console.log(res);
        if(res){
         delete value['password'];
+        value['uid'] = res
         this.authService.updateProfile(value).then(()=>{
           this.errorMessage = '';
           this.successMessage = 'Your account has been created. Please log in.';

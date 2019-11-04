@@ -7,6 +7,8 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
 declare var google
 
 
+
+
 @Component({
   selector: 'app-cusrequst',
   templateUrl: 'cusrequst.page.html',
@@ -23,10 +25,12 @@ export class CusrequstPage implements OnInit {
   data: any
   map: any;
   museum:any
+  dataUserStorage:any
   constructor(
     public navCtrl: NavController,
     private cusrequstsService: CusrequstsService,
-    private geolocation: Geolocation ) {
+    private geolocation: Geolocation
+     ) {
  }
 
 
@@ -63,6 +67,7 @@ export class CusrequstPage implements OnInit {
  
   
   buttonFix() {
+
     this.data = {
       idCar: this.idCar,
       breakDown: this.breakDown,
@@ -72,8 +77,10 @@ export class CusrequstPage implements OnInit {
       latitude: this.museum.latitude,
       longtitude : this.museum.longitude
     }
+
+   delete this.data.ansRadio
     this.cusrequstsService.updateCusrequsts(this.data)
-    this.navCtrl.navigateForward(`/badcondition/${this.idCar}/${this.breakDown}/${this.refuel}/${this.ansRadio}/${this.tireChange}`)
+    // this.navCtrl.navigateForward(`/badcondition/${this.idCar}/${this.breakDown}/${this.refuel}/${this.ansRadio}/${this.tireChange}`)
   }
 
   dismissRegister(){

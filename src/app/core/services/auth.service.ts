@@ -15,11 +15,11 @@ export class AuthService {
     this.userCollection = this.afs.collection<any>('userProfile');
   }
 
-register(value: RegisterInterface) {
-  return new Promise<any>((resolve, reject) => {
+register(value) {
+  return new Promise<any>((resolve, reject) => {    
     firebase.auth().createUserWithEmailAndPassword(value.email,value.password)
     .then(
-      (res) => resolve(res),
+      (res) => resolve(res.user.uid),
       (err) => reject(err)
     );
   });
@@ -30,7 +30,7 @@ loginUser(value: AuthInterface) {
   return new Promise<any>((resolve, reject) => {
     firebase.auth().signInWithEmailAndPassword(value.email, value.password)
        .then(
-         (res) => resolve(res),
+         (res) => resolve(res.user.uid),
          (err) => reject(err)
        );
           
@@ -53,7 +53,16 @@ userDetails() {
  
 }
 
-updateProfile(data: any):Promise<DocumentReference>{
-  return this.userCollection.add(data);
+updateProfile(data){  
+  let db = firebase.firestore()
+  return db.collection('userProfile').doc(data.uid).set({
+    email: data.email,
+    fName : data.fName,
+    idCard : data.idCard,
+    birthDay: data.birthDay,
+    tel : data.tel,
+    type : data.type,
+    uid : data.uid
+  })
 }
 }

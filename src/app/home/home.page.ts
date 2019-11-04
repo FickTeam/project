@@ -3,6 +3,10 @@ import { AuthInterface } from '../_models/auth.interface';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { NavController } from '@ionic/angular';
 import { AuthService } from '../core/services/auth.service';
+import * as firebase from 'firebase/app';
+import { Storage } from '@ionic/storage';
+
+
 
 @Component({
   selector: 'app-home',
@@ -26,8 +30,11 @@ export class HomePage {
   constructor(
     private navCtrl: NavController,
     private authService: AuthService,
-    private formBuilder: FormBuilder
-  ) { }
+    private formBuilder: FormBuilder,
+    private storage:Storage
+  ) { 
+
+  }
 
   ngOnInit() {
     this.form = this.formBuilder.group({
@@ -45,8 +52,19 @@ export class HomePage {
   loginUser(value) {
     this.authService.loginUser(value)
     .then(res => {
+      console.log(res);
+      
+      let db = firebase.firestore()
+      let docRef = db.collection("userProfile").doc(res)
+      docRef.get().then(userData =>{
+        this.storage.set("dataUser",userData.data())    
+        if (userData.data().type == 'f') {
+            this.navCtrl.navigateForward('/order');
+        } else {
+            this.navCtrl.navigateForward('/cusrequst');
+        }
+      })
       this.errorMessage = '';
-      this.navCtrl.navigateForward('/cusrequst');
     }, err => {
       this.errorMessage = err.message;
     });

@@ -36,6 +36,7 @@ export class Register2Page implements OnInit {
       idCard: new FormControl(''),
       birthDay: new FormControl(''),
       tel: new FormControl(''),
+      type : new FormControl('f'),
       email: new FormControl('', Validators.compose([
         Validators.required,
         Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
@@ -62,6 +63,7 @@ export class Register2Page implements OnInit {
        console.log(res);
        if(res){
         delete value['password'];
+        value['uid'] = res
         this.authService.updateProfile(value).then(()=>{
           this.errorMessage = '';
           this.successMessage = 'Your account has been created. Please log in.';

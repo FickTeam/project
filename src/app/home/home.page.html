@@ -48,19 +48,15 @@
   </form>
   
     <label class="error-message">{{errorMessage}}</label>
-    <ion-button size="small" expand="full" color="danger" (click)="goToRegisterPage()">สมัครสมาชิกลูกค้า</ion-button>
-    <ion-button size="small" type="submit" expand="full" (click)="goToRegister2Page()">สมัครสมาชิกช่าง</ion-button>
-    
+  <ion-row>
+    <ion-col style="text-align: right">
+      <ion-button size="small" expand="full" color="danger" (click)="goToRegisterPage()">สมัครสมาชิกลูกค้า</ion-button>
+    </ion-col>
 
->   <ion-row>
->     <ion-col style="text-align: right">
->       <ion-button size="small" expand="full" color="danger" (click)="goToRegisterPage()">สมัครสมาชิกลูกค้า</ion-button>
->     </ion-col>
+    <ion-col style="text-align: left">
+      <ion-button size="small" type="submit" expand="full" (click)="goToRegister2Page()">สมัครสมาชิกช่าง</ion-button>
+    </ion-col>
+  </ion-row>
 
->     <ion-col style="text-align: left">
->       <ion-button size="small" type="submit" expand="full" (click)="goToRegister2Page()">สมัครสมาชิกช่าง</ion-button>
->     </ion-col>
->   </ion-row>
->
     
 </ion-content>
