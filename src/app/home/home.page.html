@@ -10,9 +10,11 @@
   <!-- class="form" [formGroup]="form"  (ngSubmit)="loginUser(form.value)" -->
   <form  [formGroup]="form"  (ngSubmit)="loginUser(form.value)">
 
+    <div style="text-align:right;">
     <ion-text>ลูกค้า/ช่างซ่อม</ion-text>
     <ion-toggle color="primary"></ion-toggle>
-    
+    </div>
+
     <ion-item>
       <ion-label position="floating" >Email</ion-label>
       <ion-input type="text" formControlName="email"></ion-input>
@@ -30,8 +32,9 @@
       <ion-input type="password" formControlName="password" class="form-controll" required></ion-input>
     </ion-item>
 
-    
-    <ion-button text="right" size="small" (click)="resetPassword()">Forgot Password?</ion-button>
+    <div style="text-align:right;">
+    <button size="small" (click)="resetPassword()">Forgot Password?</button>
+    </div>
 
     <div class="validation-errors">
       <ng-container *ngFor="let validation of validationMessages.password">
@@ -45,8 +48,19 @@
   </form>
   
     <label class="error-message">{{errorMessage}}</label>
-    <ion-button expand="full" color="danger" (click)="goToRegisterPage()">สมัครสมาชิก</ion-button>
-    <ion-button type="submit" expand="full" (click)="goToRegister2Page()">สมัครสมาชิก2</ion-button>
+    <ion-button size="small" expand="full" color="danger" (click)="goToRegisterPage()">สมัครสมาชิกลูกค้า</ion-button>
+    <ion-button size="small" type="submit" expand="full" (click)="goToRegister2Page()">สมัครสมาชิกช่าง</ion-button>
     
+
+>   <ion-row>
+>     <ion-col style="text-align: right">
+>       <ion-button size="small" expand="full" color="danger" (click)="goToRegisterPage()">สมัครสมาชิกลูกค้า</ion-button>
+>     </ion-col>
+
+>     <ion-col style="text-align: left">
+>       <ion-button size="small" type="submit" expand="full" (click)="goToRegister2Page()">สมัครสมาชิกช่าง</ion-button>
+>     </ion-col>
+>   </ion-row>
+>
     
 </ion-content>

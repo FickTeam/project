@@ -2,7 +2,12 @@
   <ion-toolbar>
     <ion-button color="light" (click)="dismissRegister()">กลับ</ion-button>
     <ion-title style="text-align: center">แจ้งอาการ</ion-title>
-    <ion-icon slot="icon-only" slot="end" name="person"></ion-icon>
+    
+    <ion-buttons slot="end">
+        <ion-button color="dark" (click)="dismissProfilecustomer()">
+          <ion-icon slot="icon-only" slot="end" name="person"></ion-icon>
+        </ion-button>
+      </ion-buttons>
 
   </ion-toolbar>
 </ion-header>

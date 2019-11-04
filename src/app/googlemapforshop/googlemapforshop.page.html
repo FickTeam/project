@@ -1,11 +1,22 @@
 <ion-header>
   <ion-toolbar>
+      <ion-button color="light" (click)="dismissOrder()">กลับ</ion-button>
     <ion-title>googlemapforshop</ion-title>
+
+    <ion-buttons slot="end">
+        <ion-button color="dark" (click)="dismissProfilerepairman()">
+          <ion-icon slot="icon-only" slot="end" name="person"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
     <div #mapContainer id="map"></div>
+
+    <div style="text-align:center;">
     <ion-button color="success" (click)="accessJOB()">รับงาน</ion-button>
+    </div>
 
 </ion-content>
