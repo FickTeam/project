@@ -20,9 +20,6 @@ dataLongtitude:any
    let dataParse = JSON.parse(dataUser)
    console.log(dataParse.repairinvoiced.position._lat);
    
-    
-    
-    //ใส่ latitude กับ longtitude --------->( latitude , longtitude )
     const latLng = new google.maps.LatLng(dataParse.repairinvoiced.position._lat,dataParse.repairinvoiced.position._long);  
     const mapOptions = {
       center: latLng,
