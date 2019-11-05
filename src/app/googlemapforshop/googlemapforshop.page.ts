@@ -1,6 +1,8 @@
 import { Component, OnInit ,ViewChild, ElementRef} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NavController } from '@ionic/angular';
+import { AccessJOBService } from "../core/services/access-job.service";
+import { Storage } from "@ionic/storage";
 declare var google
 
 @Component({
@@ -10,20 +12,19 @@ declare var google
 })
 export class GooglemapforshopPage implements OnInit {
   @ViewChild('mapContainer',{static:true}) mapContainer: ElementRef;
-
+  dataUser:any
   constructor
     (public route:ActivatedRoute, 
-     public navCtrl: NavController,) { 
+     public navCtrl: NavController,public accessJOBService:AccessJOBService,private storage:Storage) { 
+       this.dataUser =  this.route.snapshot.params.data
+
 }
 
 map:any
 dataLatitude:any
 dataLongtitude:any
   ngOnInit() {
-   let dataUser =  this.route.snapshot.params.data
-   let dataParse = JSON.parse(dataUser)
-   console.log(dataParse.repairinvoiced.position._lat);
-   
+   let dataParse = JSON.parse(this.dataUser)   
     const latLng = new google.maps.LatLng(dataParse.repairinvoiced.position._lat,dataParse.repairinvoiced.position._long);  
     const mapOptions = {
       center: latLng,
@@ -40,6 +41,9 @@ dataLongtitude:any
   }
 
    accessJOB(){
+    this.storage.get("dataUser").then(data =>{
+      this.accessJOBService.updateAccessJOB(JSON.parse(this.dataUser),data)
+    })
     this.navCtrl.navigateForward("/device")
   }
 

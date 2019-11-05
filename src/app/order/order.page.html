@@ -16,10 +16,12 @@
   </ion-header>
 
 <ion-content>
+    <div *ngIf="status;else elsecard">
 
-    <ion-avatar slot="start">
+        ไม่มีการราย
 
-      </ion-avatar>
+      </div>
+      <ng-template #elsecard>
     <ion-list>
       <ion-item *ngFor ="let dataRepairinvoiced of userDoc" (click)="sendData(dataRepairinvoiced)">
           <ion-card id="card">
@@ -54,7 +56,9 @@
             </ion-grid>
           </ion-card>
       </ion-item>
+      
 </ion-list>
+</ng-template>
 
   
 </ion-content>

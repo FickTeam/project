@@ -29,7 +29,8 @@ updateCusrequsts(data){
         gasline:data.refuel,
         licenseplate:data.idCar,
         position: new firebase.firestore.GeoPoint(data.latitude, data.longtitude)
-      }
+      },
+      repairPeople:{}
     })
   })
 

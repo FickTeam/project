@@ -15,6 +15,7 @@ export class OrderPage implements OnInit {
   userDoc:any =[]
   dataUserSecret : any =[]
   img:any
+  status :any =  false
   constructor(private listdataforshopService :ListdataforshopService, private afs: AngularFirestore,
     public router: Router,public navCtrl: NavController
     ) { }
@@ -22,22 +23,24 @@ export class OrderPage implements OnInit {
   ngOnInit() {
 
     let db = firebase.firestore()
-    db.collection("userProfile").where("repairinvoiced", ">", {}).get().then(querySnapshot =>{
-      querySnapshot.forEach((doc) => {
-        console.log(doc);
-        
-        this.userDoc.push(doc.data())
-        
+   let gg = db.collection("userProfile")
+        gg.where("repairinvoiced", ">", {})
+        gg.where("repairPeople", "==", {})
+   .get().then(querySnapshot =>{
+      querySnapshot.forEach((doc) => {   
+        this.userDoc.push(doc.data()) 
       });
     }).catch(function(error) {
       console.log("Error getting documents: ", error);
   });
   this.img = "../../assets//img/faceimg.jpg"
-    console.log(this.userDoc);
+  // if (this.userDoc.length == 0) {
+  //   this.status = true
+  // }
     
   }
   sendData(data){
-    let dataUser = JSON.stringify(data)
+    let dataUser = JSON.stringify(data)    
   this.router.navigate(['googlemapforshop',dataUser])
   }
 

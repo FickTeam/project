@@ -33,7 +33,7 @@ export class HomePage {
     private formBuilder: FormBuilder,
     private storage:Storage
   ) { 
-
+    this.storage.clear()
   }
 
   ngOnInit() {
