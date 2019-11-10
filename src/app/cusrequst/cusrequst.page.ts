@@ -80,7 +80,7 @@ export class CusrequstPage implements OnInit {
 
    delete this.data.ansRadio
     this.cusrequstsService.updateCusrequsts(this.data)
-    // this.navCtrl.navigateForward(`/badcondition/${this.idCar}/${this.breakDown}/${this.refuel}/${this.ansRadio}/${this.tireChange}`)
+    this.navCtrl.navigateForward(`/badcondition`)
   }
 
   dismissRegister(){

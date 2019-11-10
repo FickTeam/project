@@ -1,0 +1,34 @@
+ion-content {
+    .circle{ /* ชื่อคลาสต้องตรงกับ <img class="circle"... */
+        height: 120px;  /* ความสูงปรับให้เป็นออโต้ */
+        width: 120px;  /* ความสูงปรับให้เป็นออโต้ */
+        border: 4px solid black; /* เส้นขอบขนาด 3px solid: เส้น #fff:โค้ดสีขาว */
+        border-radius: 50%; /* ปรับเป็น 50% คือความโค้งของเส้นขอบ*/
+        margin: auto;
+    }
+    .line{
+        height: 50px;
+        width: 10px;
+        border: 4px solid black;
+        margin: auto;
+
+    }
+    #imgUser{
+        border: 4px solid #fff;
+        border-radius: 50px;
+        margin-top: 13px;
+        height: 15px;
+        width: 15px;
+
+    }
+    #card {
+        border: 4px solid #ffc700;
+        height: 100%;
+        width: 94%;
+        // margin: 10px 10px 10px 10px;
+        border-radius: 50px;
+    }
+    .wait{
+        background-color: red;
+    }
+}

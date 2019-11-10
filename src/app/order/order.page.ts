@@ -34,10 +34,7 @@ export class OrderPage implements OnInit {
       console.log("Error getting documents: ", error);
   });
   this.img = "../../assets//img/faceimg.jpg"
-  // if (this.userDoc.length == 0) {
-  //   this.status = true
-  // }
-    
+
   }
   sendData(data){
     let dataUser = JSON.stringify(data)    

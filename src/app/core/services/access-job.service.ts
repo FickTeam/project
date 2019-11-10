@@ -21,11 +21,11 @@ export class AccessJOBService {
       db.collection('userProfile').doc(data.uid).update({
         repairPeople :{
           fNameRepair:fdata.fName,
-          fTelRepair : fdata.tel
+          fTelRepair : fdata.tel,
+          fImgRepair:""
 
-        }
+        },
+        "repairinvoiced.status":"A"
       })
-    
-
   }
 }

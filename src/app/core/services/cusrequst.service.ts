@@ -28,7 +28,9 @@ updateCusrequsts(data){
         badcondition:data.breakDown,
         gasline:data.refuel,
         licenseplate:data.idCar,
-        position: new firebase.firestore.GeoPoint(data.latitude, data.longtitude)
+        position: new firebase.firestore.GeoPoint(data.latitude, data.longtitude),
+        status:"W"
+        // W : wait ,A : approve , P : process , C : completed
       },
       repairPeople:{}
     })

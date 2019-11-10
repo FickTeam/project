@@ -18,5 +18,4 @@ export class DevicePage implements OnInit {
   dismissGoogleforshop(){
     this.navCtrl.navigateBack("/googleforshop")
   }
-
 }
