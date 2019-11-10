@@ -63,6 +63,20 @@ updateProfile(data){
     tel : data.tel,
     type : data.type,
     uid : data.uid
+   
+  })
+}
+updateProfileRepairman(data){  
+  let db = firebase.firestore()
+  return db.collection('userProfile').doc(data.uid).set({
+    email: data.email,
+    fName : data.fName,
+    idCard : data.idCard,
+    birthDay: data.birthDay,
+    tel : data.tel,
+    type : data.type,
+    uid : data.uid,
+    history:{}
   })
 }
 }
