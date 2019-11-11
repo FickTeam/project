@@ -18,23 +18,25 @@ export class OrderPage implements OnInit {
   status :any =  false
   constructor(private listdataforshopService :ListdataforshopService, private afs: AngularFirestore,
     public router: Router,public navCtrl: NavController
-    ) { }
+    ) { 
+      let db = firebase.firestore()
+      let gg = db.collection("userProfile")
+           gg.where("repairinvoiced", ">", {})
+           gg.where("repairPeople", "==", {})
+      .get().then(querySnapshot =>{
+         querySnapshot.forEach((doc) => {   
+           this.userDoc.push(doc.data()) 
+         });
+       }).catch(function(error) {
+         console.log("Error getting documents: ", error);
+     });
+     this.img = "../../assets//img/faceimg.jpg"
+   
+    }
 
   ngOnInit() {
 
-    let db = firebase.firestore()
-   let gg = db.collection("userProfile")
-        gg.where("repairinvoiced", ">", {})
-        gg.where("repairPeople", "==", {})
-   .get().then(querySnapshot =>{
-      querySnapshot.forEach((doc) => {   
-        this.userDoc.push(doc.data()) 
-      });
-    }).catch(function(error) {
-      console.log("Error getting documents: ", error);
-  });
-  this.img = "../../assets//img/faceimg.jpg"
-
+    
   }
   sendData(data){
     let dataUser = JSON.stringify(data)    

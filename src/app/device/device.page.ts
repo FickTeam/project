@@ -15,9 +15,26 @@ export class DevicePage implements OnInit {
   constructor(public navCtrl: NavController,private storage:Storage) { }
 
   ngOnInit() {
+
+  }
+  sendDataToFireStore(){
     let db = firebase.firestore()
     this.storage.get("dataUser").then(data =>{
-      // db.collection("userProfile").doc(data.uid).collection("history").add()
+      let Qry = db.collection("userProfile").doc(data.uid)
+      //update
+      Qry.update({
+        history: firebase.firestore.FieldValue.arrayUnion(
+          {
+            idCar:this.idCar,
+            breakDown:this.breakDown,
+            price:this.price
+          }
+          )
+      })
+
+      //update status "F"
+      this.navCtrl.navigateForward("/order")
+
     })
   }
 }

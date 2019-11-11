@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { NavController, AlertController } from '@ionic/angular';
 import { AuthService } from '../core/services/auth.service';
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
+
 
 @Component({
   selector: 'app-register2',
@@ -27,7 +29,8 @@ export class Register2Page implements OnInit {
     private navCtrl: NavController,
     private authService: AuthService,
     private formBuilder: FormBuilder,
-    private alertController: AlertController
+    private alertController: AlertController,
+    private transfer: FileTransfer
   ) { }
 
   ngOnInit() {
@@ -108,6 +111,8 @@ export class Register2Page implements OnInit {
     });
     await alert.present();
   }
+
+  
 
 
 }
