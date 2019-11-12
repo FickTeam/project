@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { NavController, AlertController } from '@ionic/angular';
 import { AuthService } from '../core/services/auth.service';
-import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 
 
 @Component({
@@ -14,6 +14,7 @@ export class Register2Page implements OnInit {
   form: FormGroup;
   errorMessage = '';
   successMessage = '';
+  base64Image:any = "assets/icon/user.png"
  
   validationMessages = {
    'email': [
@@ -30,8 +31,9 @@ export class Register2Page implements OnInit {
     private authService: AuthService,
     private formBuilder: FormBuilder,
     private alertController: AlertController,
-    private transfer: FileTransfer
-  ) { }
+    private camera: Camera
+  ) { 
+  }
 
   ngOnInit() {
     this.form = this.formBuilder.group({
@@ -67,6 +69,7 @@ export class Register2Page implements OnInit {
        if(res){
         delete value['password'];
         value['uid'] = res
+        value['base64Image'] = this.base64Image
         this.authService.updateProfileRepairman(value).then(()=>{
           this.errorMessage = '';
           this.successMessage = 'Your account has been created. Please log in.';
@@ -112,7 +115,24 @@ export class Register2Page implements OnInit {
     await alert.present();
   }
 
-  
-
-
+  takeGallery(){
+    const options: CameraOptions = {
+      quality: 100,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE,
+      sourceType:this.camera.PictureSourceType.PHOTOLIBRARY
+      }
+      
+      this.camera.getPicture(options).then((imageData) => {
+       // imageData is either a base64 encoded string or a file URI
+       // If it's base64 (DATA_URL):
+      this.base64Image = 'data:image/jpeg;base64,' + imageData;
+      
+      }, (err) => {
+       // Handle error
+      });
+    // console.log("ถ่ายรูป");
+    
+  }
 }

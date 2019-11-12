@@ -15,5 +15,8 @@ export class ProfilerepairmanPage implements OnInit {
   dismissOrder(){
     this.navCtrl.navigateBack("/order")
   }
+  signup(data){
+
+  }
 
 }

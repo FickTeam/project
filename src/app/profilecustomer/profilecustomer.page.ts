@@ -15,5 +15,8 @@ export class ProfilecustomerPage implements OnInit {
   dismissCusrequst(){
     this.navCtrl.navigateBack("/cusrequst")
   }
+  signup(data){
+
+  }
 
 }

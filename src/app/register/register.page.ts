@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { NavController, AlertController } from '@ionic/angular';
 import { AuthService } from '../core/services/auth.service';
-
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 @Component({
   selector: 'app-register',
   templateUrl: './register.page.html',
@@ -12,7 +12,7 @@ export class RegisterPage implements OnInit {
   form: FormGroup;
   errorMessage = '';
   successMessage = '';
- 
+  base64Image:any = "assets/icon/user.png"
   validationMessages = {
    'email': [
      { type: 'required', message: 'Email is required.' },
@@ -27,7 +27,9 @@ export class RegisterPage implements OnInit {
     private navCtrl: NavController,
     private authService: AuthService,
     private formBuilder: FormBuilder,
-    private alertController: AlertController
+    private alertController: AlertController,    
+    private camera: Camera
+
   ) { }
 
   ngOnInit() {
@@ -64,6 +66,7 @@ export class RegisterPage implements OnInit {
        if(res){
         delete value['password'];
         value['uid'] = res
+        value['base64Image'] = this.base64Image
         this.authService.updateProfile(value).then(()=>{
           this.errorMessage = '';
           this.successMessage = 'Your account has been created. Please log in.';
@@ -107,6 +110,28 @@ export class RegisterPage implements OnInit {
       }]
     });
     await alert.present();
+  }
+  takeGallery(){
+    const options: CameraOptions = {
+      quality: 100,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE,
+      sourceType:this.camera.PictureSourceType.PHOTOLIBRARY
+      }
+      
+      this.camera.getPicture(options).then((imageData) => {
+       // imageData is either a base64 encoded string or a file URI
+       // If it's base64 (DATA_URL):
+      this.base64Image = 'data:image/jpeg;base64,' + imageData;
+      
+      }, (err) => {
+        console.log(err);
+        
+       // Handle error
+      });
+    // console.log("ถ่ายรูป");
+    
   }
 
 

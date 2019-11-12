@@ -1,6 +1,5 @@
 import { Component, OnInit,ViewChild, ElementRef } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import { RepairmanPage } from "../repairman/repairman.page";
 import { Navigation } from 'selenium-webdriver';
 import { CusrequstsService } from '../core/services/cusrequst.service'
 import { Geolocation } from '@ionic-native/geolocation/ngx';

@@ -8,7 +8,6 @@ const routes: Routes = [
   { path: 'dashboard', loadChildren: './components/dashboard/dashboard.module#DashboardPageModule' },
   { path: 'cusrequst', loadChildren: './cusrequst/cusrequst.module#CusrequstPageModule' },
   { path: 'cusrequst', loadChildren: './cusrequst/cusrequst.module#CusrequstPageModule' },
-  { path: 'repairman/:data/:data1/:data2/:data3/:data4', loadChildren: './repairman/repairman.module#RepairmanPageModule' },
   { path: 'register2', loadChildren: './register2/register2.module#Register2PageModule' },
   { path: 'googlemap', loadChildren: './googlemap/googlemap.module#GooglemapPageModule' },
   { path: 'googlemapforshop/:data', loadChildren: './googlemapforshop/googlemapforshop.module#GooglemapforshopPageModule' },

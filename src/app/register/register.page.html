@@ -6,11 +6,18 @@
 </ion-header>
 <ion-content padding>
   <!-- <form #form="ngForm" (ngSubmit)="register(form)" method="post"> -->
-      <ion-item>
+      <!-- <ion-item>
         <img src="https://scontent.fbkk11-1.fna.fbcdn.net/v/t1.15752-9/69805046_2743438665690783_854852719884632064_n.png?_nc_cat=105&_nc_eui2=AeEZoexHBXvUMfN9uv2LIX4nq7qAGrXU4IC5G7dq6Vcg7PYEPQVz8fPCaiOx00DB_zcam5eEHwWYmCMTGT8e2GN0fjzy8bJmjADyYbq2tplJIA&_nc_oc=AQl1DYKxzfE0NFEY8Yt8Pt3-6M2x1AzYW2hh3Rj419s_Q9Us95ayvJy9c0QgzOFaXrE&_nc_ht=scontent.fbkk11-1.fna&oh=abac7097091fc14049f1ce2e3ad33185&oe=5DD0AD7A">
       </ion-item>
-    
+     -->
+     <img class="block" [src]="base64Image"/>
+     <button ion-button round ion-button id="divbutton1" class="text-bold" (click)="takeGallery()">
+      <ion-label>Upload Image</ion-label>
+     </button>
+
   <form class="form" [formGroup]="form"  (ngSubmit)="tryRegister(form.value)">
+
+       
     <ion-item>
         <ion-label position="floating">Email</ion-label>
       <ion-input type="email" formControlName="email"></ion-input>

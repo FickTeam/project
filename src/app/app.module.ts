@@ -21,6 +21,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+
+
 
 var firebaseConfig: {
   apiKey: "AIzaSyCk1aQs1xispsoqtMJ7ZZdOxkR7IwKKGjc",
@@ -31,6 +34,7 @@ var firebaseConfig: {
   messagingSenderId: "597930985217",
   appId: "1:597930985217:web:95e972f7ecac0156"
 }
+
 
 
 @NgModule({
@@ -48,6 +52,7 @@ var firebaseConfig: {
 
   ],
   providers: [
+    Camera,
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
