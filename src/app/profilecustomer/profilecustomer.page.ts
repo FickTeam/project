@@ -13,13 +13,19 @@ export class ProfilecustomerPage implements OnInit {
   constructor(public navCtrl: NavController , private storage:Storage) { }
 fname:any
 email:any
+tel:any
+idCard:any
   ngOnInit() {
     let db = firebase.firestore()
     this.storage.get("dataUser").then(data =>{
      let datas =  db.collection("userProfile").doc(data.uid).get().then(data =>{
    this.fname = data.data().fName
    console.log(data.data())
-   this.email = data.data().email 
+   this.email = data.data().email
+   console.log(data.data())
+   this.tel = data.data().tel
+   console.log(data.data())
+   this.idCard = data.data().idCard    
 
      })
     })
