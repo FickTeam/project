@@ -11,26 +11,19 @@
   
   
   <ion-content class="ion-padding">
-  
+   
       <form novalidate #myForm="ngForm">
         <ion-list>
           <ion-item>
             <ion-label position="floating">ชื่อ-สกุล</ion-label>
-            <ion-input ngModel type="text" name="fullname" #fullname="ngModel" required></ion-input>
+            <ion-input type="text"name='fullname' required [(ngModel)]="fname"></ion-input>
           </ion-item>
-          <ion-text class="ion-padding" color="danger" *ngIf="fullname.invalid && (fullname.dirty || fullname.touched)">
-            กรุณาป้อนชื่อ-สกุล
-          </ion-text>
+        
     
           <ion-item>
             <ion-label position="floating">Email</ion-label>
-            <ion-input ngModel type="email" name="email" #email="ngModel" required
-              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
-            </ion-input>
+            <ion-input type="text" name='email' required [(ngModel)]="email"></ion-input>   
           </ion-item>
-          <ion-text class="ion-padding" color="danger" *ngIf="email.invalid && (email.dirty || email.touched)">
-            กรุณาป้อนอีเมล์ และระบุรูปแบบอีเมล์ให้ถูกต้อง
-          </ion-text>
     
           <ion-item>
             <ion-label position="floating">Password</ion-label>

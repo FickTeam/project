@@ -14,9 +14,9 @@ import { Storage } from "@ionic/storage";
 })
 export class BadconditionPage implements OnInit {
   name:any
-  image :any
+  image:any
   tel:any
-  constructor(public route:ActivatedRoute,public navCtrl: NavController,private storage:Storage){
+  constructor(public route:ActivatedRoute , public navCtrl: NavController , private storage: Storage) {
    
     
     

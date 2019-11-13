@@ -10,11 +10,6 @@
   <!-- class="form" [formGroup]="form"  (ngSubmit)="loginUser(form.value)" -->
   <form  [formGroup]="form"  (ngSubmit)="loginUser(form.value)">
 
-    <div style="text-align:right;">
-    <ion-text>ลูกค้า/ช่างซ่อม</ion-text>
-    <ion-toggle color="primary"></ion-toggle>
-    </div>
-
     <ion-item>
       <ion-label position="floating" >Email</ion-label>
       <ion-input type="text" formControlName="email"></ion-input>
