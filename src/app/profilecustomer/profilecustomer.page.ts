@@ -21,8 +21,6 @@ idCard:any
      let datas =  db.collection("userProfile").doc(data.uid).get().then(data =>{
    this.fname = data.data().fName
    console.log(data.data())
-   this.email = data.data().email
-   console.log(data.data())
    this.tel = data.data().tel
    console.log(data.data())
    this.idCard = data.data().idCard    
@@ -34,7 +32,21 @@ idCard:any
     this.navCtrl.navigateBack("/cusrequst")
   }
   signup(data){
+    console.log(this.fname);
+    
+    this.storage.get("dataUser").then(data =>{
+      console.log(data.uid);
+      
+      let db =firebase.firestore();
+     db.collection('userProfile').doc(data.uid).update({
+       "fName":this.fname,
+       "tel":this.tel,
+       "idCard":this.idCard
+     })
 
+    })
+
+     
   }
 
 }

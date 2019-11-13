@@ -15,19 +15,19 @@ export class ProfilerepairmanPage implements OnInit {
   tel:any
   idCard:any
   history:any
+  userProfile:any 
     ngOnInit() {
       let db = firebase.firestore()
      this.storage.get("dataUser").then(data =>{
       let datas =  db.collection("userProfile").doc(data.uid).get().then(data =>{
      this.fname = data.data().fName
      console.log(data.data())
-     this.email = data.data().email 
-     console.log(data.data())
      this.tel = data.data().tel
      console.log(data.data())
      this.idCard = data.data().idCard 
      console.log(data.data())
-     this.history = data.data().history    
+     this.history = data.data().history 
+     
   
        })
       })
@@ -36,7 +36,21 @@ export class ProfilerepairmanPage implements OnInit {
     this.navCtrl.navigateBack("/order")
   }
   signup(data){
+    console.log(this.fname);
+    
+    this.storage.get("dataUser").then(data =>{
+      console.log(data.uid);
+      
+      let db =firebase.firestore();
+     db.collection('userProfile').doc(data.uid).update({
+       "fName":this.fname,
+       "tel":this.tel,
+       "idCard":this.idCard
+     })
 
+    })
+
+     
   }
 
 }
