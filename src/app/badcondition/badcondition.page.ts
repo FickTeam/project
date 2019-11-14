@@ -16,6 +16,7 @@ export class BadconditionPage implements OnInit {
   name:any
   image:any
   tel:any
+  storageData:any
   constructor(public route:ActivatedRoute , public navCtrl: NavController , private storage: Storage) {
    
     
@@ -27,6 +28,7 @@ export class BadconditionPage implements OnInit {
   ngOnInit() {
     let db = firebase.firestore()
     this.storage.get("dataUser").then(data =>{
+      this.storageData = data
      let datas =  db.collection("userProfile").doc(data.uid)
      datas.onSnapshot(doc=> {
  
@@ -64,5 +66,11 @@ export class BadconditionPage implements OnInit {
     this.name = data3.repairPeople.fNameRepair
     this.tel = data3.repairPeople.fTelRepair
 
+  }
+  cancel(){
+    let firebasedb = firebase.firestore()
+    firebasedb.collection('userProfile').doc( this.storageData.uid).update({
+      "repairPeople":{}
+    }).then(data => this.navCtrl.navigateBack("/cusrequst"))
   }
 }
