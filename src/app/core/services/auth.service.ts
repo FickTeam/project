@@ -59,9 +59,9 @@ logoutUser() {
 updateProfile(data){  
   let db = firebase.firestore()
   var storageRef = firebase.storage().ref(`photo/${data.base64Image}`)
-  storageRef.put(data.base64Image).snapshot.ref.getDownloadURL().then(dataImageURL =>{
-    data['imageURL'] = dataImageURL
-  })
+  // storageRef.put(data.base64Image).snapshot.ref.getDownloadURL().then(dataImageURL =>{
+  //   data['imageURL'] = dataImageURL
+  // })
   return db.collection('userProfile').doc(data.uid).set({
     email: data.email,
     fName : data.fName,
@@ -70,7 +70,7 @@ updateProfile(data){
     tel : data.tel,
     type : data.type,
     uid : data.uid,
-    img:  data.imageURL
+    // img:  data.imageURL
 })
 }
 
@@ -81,10 +81,10 @@ updateProfile(data){
 updateProfileRepairman(data){  
   let db = firebase.firestore()
   var storage = firebase.storage().ref(`photo/${data.base64Image}`)
-  console.log(data.base64Image);
-  storage.put(data.base64Image).snapshot.ref.getDownloadURL().then(dataImageURL =>{ 
-    data['imageURL'] = dataImageURL
-  })
+  // console.log(data.base64Image);
+  // storage.put(data.base64Image).snapshot.ref.getDownloadURL().then(dataImageURL =>{ 
+  //   data['imageURL'] = dataImageURL
+  // })
     return db.collection('userProfile').doc(data.uid).set({
     email: data.email,
     fName : data.fName,
@@ -93,7 +93,7 @@ updateProfileRepairman(data){
     tel : data.tel,
     type : data.type,
     uid : data.uid,
-    img : data.imageURL,
+    // img : data.imageURL,
     history:[]
 
 })
