@@ -37,6 +37,8 @@ export class RegisterPage implements OnInit {
       fName: new FormControl(''),
       idCard: new FormControl(''),
       birthDay: new FormControl(''),
+      sex: new FormControl(''),
+      bDay: new FormControl(''),
       tel: new FormControl(''),
       type: new FormControl('y'),
       email: new FormControl('', Validators.compose([

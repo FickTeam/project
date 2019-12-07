@@ -45,11 +45,26 @@
     </ion-item>
 
     <ion-item>
+      <ion-label position="floating">เพศ</ion-label>
+      <ion-input type="text" formControlName="sex"></ion-input>
+    </ion-item>
+
+    <!-- <ion-item>
+      <ion-label position="floating">MMMM/DD/YYYY</ion-label>
+      <ion-datetime displayFormat="MM/DD/YYYY" min="1994-03-14" max="2020-12-09" formControlName="bDay"></ion-datetime>
+    </ion-item> -->
+
+    <ion-item>
+      <ion-label>MMMM DD YY</ion-label>
+      <ion-datetime displayFormat="DD MMMM YYYY" placeholder="Select Date"><ion-input type="text" formControlName="bDay"></ion-input></ion-datetime>
+    </ion-item>
+
+    <ion-item>
       <ion-label position="floating">เบอร์โทรศัพท์</ion-label>
       <ion-input type="text" formControlName="tel"></ion-input>
     </ion-item>
     
-  
+        
     <ion-button  class="submit-btn" color="warning" type="submit"  [disabled]="!form.valid">สมัครสมาชิก</ion-button>
     <!-- <ion-button type="submit" expand="full" color="warning">Register</ion-button> -->
   </form>

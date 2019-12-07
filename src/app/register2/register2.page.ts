@@ -40,6 +40,7 @@ export class Register2Page implements OnInit {
       fName: new FormControl(''),
       idCard: new FormControl(''),
       birthDay: new FormControl(''),
+      sex: new FormControl(''),
       tel: new FormControl(''),
       type : new FormControl('f'),
       email: new FormControl('', Validators.compose([
