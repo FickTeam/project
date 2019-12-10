@@ -19,12 +19,17 @@
             <ion-input name="name2" type="text" placeholder="ราคาประเมิน" ngModel required [(ngModel)]="price"></ion-input>
           </ion-item>
     
-    
-           <ion-button 
-            (click)="sendDataToFireStore()">
-            ประเมิน
-           </ion-button>
-    
+          <div style="text-align:center;">
+           <ion-button (click)="sendDataToFireStore()"> ประเมิน </ion-button>
+          </div>
+
+
+          <div style="text-align:center;">
+            <ion-button color="danger" (click)="dismissreportrepairman()"> รายงาน </ion-button>
+          </div>
+
+
+                
 </ion-content>
 
   

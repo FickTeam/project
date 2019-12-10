@@ -73,4 +73,10 @@ export class BadconditionPage implements OnInit {
       "repairPeople":{}
     }).then(data => this.navCtrl.navigateBack("/cusrequst"))
   }
+
+  dismissreportcustomer(){
+    this.navCtrl.navigateForward("/reportcustomer")
+  
+}
+
 }

@@ -13,6 +13,7 @@ export class DevicePage implements OnInit {
   breakDown:any
   price:any
   constructor(public navCtrl: NavController,private storage:Storage) { }
+  
 
   ngOnInit() {
 
@@ -40,6 +41,9 @@ export class DevicePage implements OnInit {
 
   dismissGoogleforshop(){
     this.navCtrl.navigateBack("/googlemapforshop")
+  }
+  dismissreportrepairman(){
+    this.navCtrl.navigateForward("/reportrepairman")
   }
 
 }
