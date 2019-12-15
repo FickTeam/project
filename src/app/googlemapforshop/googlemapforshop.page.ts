@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { NavController } from '@ionic/angular';
 import { AccessJOBService } from "../core/services/access-job.service";
 import { Storage } from "@ionic/storage";
+import { Router } from "@angular/router";
 declare var google
 
 @Component({
@@ -15,7 +16,7 @@ export class GooglemapforshopPage implements OnInit {
   dataUser:any
   constructor
     (public route:ActivatedRoute, 
-     public navCtrl: NavController,public accessJOBService:AccessJOBService,private storage:Storage) { 
+     public navCtrl: NavController,public accessJOBService:AccessJOBService,private storage:Storage,public router: Router) { 
        this.dataUser =  this.route.snapshot.params.data
 
 }
@@ -43,8 +44,10 @@ dataLongtitude:any
    accessJOB(){
     this.storage.get("dataUser").then(data =>{
       this.accessJOBService.updateAccessJOB(JSON.parse(this.dataUser),data)
+      this.router.navigate(['device',this.dataUser])
+
     })
-    this.navCtrl.navigateForward("/device")
+
   }
 
   dismissOrder(){

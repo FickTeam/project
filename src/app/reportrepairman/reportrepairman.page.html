@@ -1,7 +1,7 @@
 <ion-header>
     <ion-toolbar>
         <ion-button color="light" (click)="gotodevice()">กลับ</ion-button>
-      <ion-title>reportcustomer</ion-title>
+      <ion-title>reportrepairman</ion-title>
     </ion-toolbar>
   </ion-header>
   
@@ -10,10 +10,10 @@
   
   <ion-item>
     <ion-label><b>รายงาน :</b></ion-label>
-    <ion-textarea rows="6" cols="20" placeholder="กรอกรายละเอียดลงที่นี่..." clearOnEdit="true"></ion-textarea>
+    <ion-textarea rows="6" cols="20" placeholder="กรอกรายละเอียดลงที่นี่..." clearOnEdit="true" [(ngModel)]="reportrepairman"></ion-textarea>
   </ion-item>
   
   
-  <ion-button size="large" color="success" expand="block">บันทึก</ion-button>
+  <ion-button (click)="sendDataToFireStore()" size="large" color="success" expand="block">บันทึก</ion-button>
   
   </ion-content>

@@ -70,6 +70,8 @@ updateProfile(data){
     tel : data.tel,
     type : data.type,
     uid : data.uid,
+    report:[],
+    imageProfile:data.imageProfile
     // img:  data.imageURL
 })
 }
@@ -80,11 +82,7 @@ updateProfile(data){
 
 updateProfileRepairman(data){  
   let db = firebase.firestore()
-  var storage = firebase.storage().ref(`photo/${data.base64Image}`)
-  // console.log(data.base64Image);
-  // storage.put(data.base64Image).snapshot.ref.getDownloadURL().then(dataImageURL =>{ 
-  //   data['imageURL'] = dataImageURL
-  // })
+
     return db.collection('userProfile').doc(data.uid).set({
     email: data.email,
     fName : data.fName,
@@ -95,6 +93,8 @@ updateProfileRepairman(data){
     uid : data.uid,
     // img : data.imageURL,
     history:[]
+    ,report:[],
+    imageProfile:data.imageProfile
 
 })
 }

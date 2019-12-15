@@ -1,12 +1,12 @@
 <ion-header>
     <ion-toolbar>
         <ion-button color="light" (click)="dismissGoogleforshop()">กลับ</ion-button>
-        <ion-title>ประเมิน</ion-title>
+        <ion-title><b>ประเมินราคาซ่อม</b></ion-title>
     </ion-toolbar>
 </ion-header>
 <ion-content>
-    <ion-item>
-        <img src="https://cdn2.iconfinder.com/data/icons/flat-ui-free/200/clipboard.png">
+    <ion-item class="img" >
+        <img src="https://www.pinclipart.com/picdir/big/18-185386_finance-clipart-accounting-journal-valuation-icon-png-download.png?fbclid=IwAR2qIf9B9mvyLW5lv0UEGBtH9jJsaPB8bjpKFrbJQn8mGb3utBOKYNFXBic">
        </ion-item>
     
         <ion-item>
@@ -19,15 +19,16 @@
             <ion-input name="name2" type="text" placeholder="ราคาประเมิน" ngModel required [(ngModel)]="price"></ion-input>
           </ion-item>
     
-          <div style="text-align:center;">
-           <ion-button (click)="sendDataToFireStore()"> ประเมิน </ion-button>
-          </div>
+          <ion-row>
+          <ion-col style="text-align:left;">
+           <ion-button color="success" (click)="sendDataToFireStore()" expand="full" > ประเมิน </ion-button>
+          </ion-col>
 
 
-          <div style="text-align:center;">
-            <ion-button color="danger" (click)="dismissreportrepairman()"> รายงาน </ion-button>
-          </div>
-
+          <ion-col style="text-align:right;">
+            <ion-button color="danger" (click)="dismissreportrepairman()" expand="full" > รายงาน </ion-button>
+          </ion-col>
+          </ion-row>
 
                 
 </ion-content>

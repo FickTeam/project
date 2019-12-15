@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { Storage } from "@ionic/storage";
 import * as firebase from 'firebase/app';
+import { Router } from "@angular/router";
+import { ActivatedRoute } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-device',
@@ -12,11 +16,16 @@ export class DevicePage implements OnInit {
   idCar:any
   breakDown:any
   price:any
-  constructor(public navCtrl: NavController,private storage:Storage) { }
+  dataUser:any
+  constructor(public route:ActivatedRoute,public navCtrl: NavController,private storage:Storage,public router: Router) { }
   
 
   ngOnInit() {
+    this.dataUser =  this.route.snapshot.params.data
+    let data = JSON.parse(this.dataUser)    
 
+this.idCar =data.repairinvoiced.licenseplate
+  
   }
   sendDataToFireStore(){
     let db = firebase.firestore()
@@ -32,7 +41,9 @@ export class DevicePage implements OnInit {
           }
           )
       })
-
+      Qry.update({
+        repairinvoiced:{}
+      })
       //update status "F"
       this.navCtrl.navigateForward("/order")
 

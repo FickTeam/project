@@ -9,32 +9,34 @@ import { Storage } from "@ionic/storage";
 })
 export class CusrequstsService {
   private userCusrequsts: AngularFirestoreCollection<any>;
-  dataUserStorage:any
+  dataUserStorage: any
   constructor(
-    private afs: AngularFirestore,private storage : Storage
-  ) { 
+    private afs: AngularFirestore, private storage: Storage
+  ) {
     this.userCusrequsts = this.afs.collection<any>('cusrequsts');
-    
+
 
   }
 
-updateCusrequsts(data){
-  let db = firebase.firestore()
-  this.storage.get("dataUser").then(dataUser =>{
-    console.log(typeof(data.longtitude));
-    
-    return db.collection('userProfile').doc(dataUser.uid).update({
-      repairinvoiced :{
-        badcondition:data.breakDown,
-        gasline:data.refuel,
-        licenseplate:data.idCar,
-        position: new firebase.firestore.GeoPoint(data.latitude, data.longtitude),
-        status:"W"
-        // W : wait ,A : approve , P : process , C : completed
-      },
-      repairPeople:{}
+  updateCusrequsts(data) {
+    let db = firebase.firestore()
+    this.storage.get("dataUser").then(dataUser => {
+      console.log(typeof (data.longtitude));
+      let day = new Date().getDay()
+      let month = new Date().getMonth()
+      let year = new Date().getFullYear()
+      return db.collection('userProfile').doc(dataUser.uid).update({
+        repairinvoiced: {
+          date: `${day+8}-${month+1}-${year}`,
+          badcondition: data.breakDown,
+          licenseplate: data.idCar,
+          position: new firebase.firestore.GeoPoint(data.latitude, data.longtitude),
+          status: "W"
+          // W : wait ,A : approve , P : process , C : completed
+        },
+        repairPeople: {},
+      });
     })
-  })
 
-  } 
+  }
 }

@@ -30,13 +30,11 @@ export class OrderPage implements OnInit {
        }).catch(function(error) {
          console.log("Error getting documents: ", error);
      });
-     this.img = "../../assets//img/faceimg.jpg"
+    
    
     }
 
   ngOnInit() {
-
-    
   }
   sendData(data){
     let dataUser = JSON.stringify(data)    

@@ -26,7 +26,7 @@ export class ProfilerepairmanPage implements OnInit {
      console.log(data.data())
      this.idCard = data.data().idCard 
      console.log(data.data())
-     this.history = data.data().history 
+     this.history = data.data().history.reverse(); 
      
   
        })

@@ -14,9 +14,10 @@ const routes: Routes = [
   { path: 'profilecustomer', loadChildren: './profilecustomer/profilecustomer.module#ProfilecustomerPageModule' },
   { path: 'profilerepairman', loadChildren: './profilerepairman/profilerepairman.module#ProfilerepairmanPageModule' },
   { path: 'order', loadChildren: './order/order.module#OrderPageModule' },
-  { path: 'device', loadChildren: './device/device.module#DevicePageModule' },
-  { path: 'badcondition', loadChildren: './badcondition/badcondition.module#BadconditionPageModule' },  { path: 'reportcustomer', loadChildren: './reportcustomer/reportcustomer.module#ReportcustomerPageModule' },
-  { path: 'reportrepairman', loadChildren: './reportrepairman/reportrepairman.module#ReportrepairmanPageModule' },
+  { path: 'device/:data', loadChildren: './device/device.module#DevicePageModule' },
+  { path: 'badcondition', loadChildren: './badcondition/badcondition.module#BadconditionPageModule' },
+  { path: 'reportcustomer', loadChildren: './reportcustomer/reportcustomer.module#ReportcustomerPageModule' },
+  { path: 'reportrepairman/:data', loadChildren: './reportrepairman/reportrepairman.module#ReportrepairmanPageModule' },
 
 ];
 

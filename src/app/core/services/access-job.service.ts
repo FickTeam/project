@@ -22,7 +22,7 @@ export class AccessJOBService {
         repairPeople :{
           fNameRepair:fdata.fName,
           fTelRepair : fdata.tel,
-          fImgRepair:""
+          fImgRepair:fdata.imageProfile
         },
         "repairinvoiced.status":"A"
       })

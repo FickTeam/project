@@ -3,11 +3,11 @@
         <ion-button color="light" (click)="backtocusrequst()">กลับ</ion-button>
         <ion-title>อาการเสีย</ion-title>
        
-        <ion-buttons slot="end">
-            <ion-button color="dark" (click)="dismissProfilecustomer()">
-              <ion-icon slot="icon-only" slot="end" name="person"></ion-icon>
-            </ion-button>
-          </ion-buttons>
+        <ion-button size="large" slot="end" color="non" (click)="dismissProfilecustomer()">
+            <ion-avatar size="small" class="ion-margin">
+               <img  src="https://scontent.fbkk22-1.fna.fbcdn.net/v/t1.15752-9/78850667_2539367516279815_5917326234978615296_n.png?_nc_cat=100&_nc_eui2=AeGxOkvpUM4MGSY-nQ5_8Nqa0g14e2TJRtgXMm-GTD0dtaycX1G2LbN-6-cVHe0bNE2LFpJwOI7JHcx7EH-zSQqNSj_joto1J4C2iJcNipZozw&_nc_ohc=LDNCnXl6bC0AQkivlBtcHWH1PLkObJNsVG31fSAS4duaYb5L8ihTnqExw&_nc_ht=scontent.fbkk22-1.fna&oh=9e192e463eb64f9e51cf79f80142a349&oe=5E783ADF">
+            </ion-avatar> 
+      </ion-button>
   
   
     </ion-toolbar>
@@ -40,7 +40,7 @@
         <ion-grid>
           <ion-row>
               <ion-col>
-                  <img src="assets/img/faceimg.jpg">
+                  <img src="{{image}}">
               </ion-col>
               <ion-col>
                   <ion-row >
@@ -64,12 +64,15 @@
     </ion-row>
 </ion-grid>
 
-<div style="text-align:center;">
-  <ion-button (click)="cancel()" color="success" >ยกเลิก</ion-button>
-</div>
+<ion-row>
 
-<div style="text-align:center;">
-    <ion-button (click)="dismissreportcustomer()" color="danger" >รายงาน</ion-button>
-  </div>
+<ion-col style="text-align:left;">
+  <ion-button (click)="cancel()" color="success" expand="full"  >ยกเลิก</ion-button>
+</ion-col>
+
+<ion-col style="text-align:right;">
+    <ion-button (click)="dismissreportcustomer()" color="danger" expand="full" >รายงาน</ion-button>
+  </ion-col>
+</ion-row>
 
 </ion-content>

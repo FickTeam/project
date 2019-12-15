@@ -8,10 +8,7 @@
 
   <!-- <form #form="ngForm" (ngSubmit)="register(form)" method="post"> -->
 
-      <ion-item>
-          <img src="https://scontent.fbkk5-5.fna.fbcdn.net/v/t1.15752-9/79192548_561421078009890_3252834627412295680_n.png?_nc_cat=104&_nc_eui2=AeEgEa0c4L_Ek58CBl2ywSMBjB9bdUiO1An4qiQt0RQLGQ-rfhbjri38Rmr_b-gciWo4sbwLt_rNQC8_wadgvQqPO-bF_1HZwphGYCfKI0lxxA&_nc_ohc=1QKTHJHWTXoAQmXTSpZ-fZyieETihlAhm6tgdwbJYjn5M0J2IOqCpPl6Q&_nc_ht=scontent.fbkk5-5.fna&oh=10d126ab604362d3b669430252dba35d&oe=5E48878E">
-        </ion-item>
-       
+   
       
     <!-- <img class="block" [src]="base64Image"/>
      <button ion-button round ion-button id="divbutton1" class="text-bold" (click)="takeGallery()">
@@ -20,6 +17,10 @@
 
   <form class="form" [formGroup]="form"  (ngSubmit)="tryRegister2(form.value)">
 
+      <ion-item>
+          <ion-input id="test" type="text" formControlName="imageProfile"></ion-input>
+         </ion-item>
+       
    
     <ion-item>
         <ion-label position="floating">Email</ion-label>

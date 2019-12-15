@@ -28,9 +28,11 @@ export class BadconditionPage implements OnInit {
   ngOnInit() {
     let db = firebase.firestore()
     this.storage.get("dataUser").then(data =>{
+      console.log(data)
       this.storageData = data
      let datas =  db.collection("userProfile").doc(data.uid)
      datas.onSnapshot(doc=> {
+       
  
               
               if (doc.data().repairinvoiced.status === "W") {
@@ -61,16 +63,20 @@ export class BadconditionPage implements OnInit {
   dismissProfilecustomer(){
   this.navCtrl.navigateForward("/profilecustomer")
   }
+
   appove(data3){
     
     this.name = data3.repairPeople.fNameRepair
     this.tel = data3.repairPeople.fTelRepair
+    this.image = data3.repairPeople.fImgRepair
 
+
+    
   }
   cancel(){
     let firebasedb = firebase.firestore()
     firebasedb.collection('userProfile').doc( this.storageData.uid).update({
-      "repairPeople":{}
+      "repairPeople":{},"repairinvoiced":{}
     }).then(data => this.navCtrl.navigateBack("/cusrequst"))
   }
 

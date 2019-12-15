@@ -40,6 +40,8 @@ export class RegisterPage implements OnInit {
       sex: new FormControl(''),
       bDay: new FormControl(''),
       tel: new FormControl(''),
+      imageProfile:new FormControl(''),
+
       type: new FormControl('y'),
       email: new FormControl('', Validators.compose([
         Validators.required,
